@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="{{ url_for('main_menu.static', filename='css/main-menu.css') }}"/>
+<img class="logoPic" src={{ url_for('main_menu.static', filename='media/banner.png') }}>
+<div class="navigation-bar">
+    <a href="/">עמוד הבית</a>
+    <a href={{ url_for('catalog.index') }}>תפריט</a>
+    <a href={{ url_for('about.index') }}>מי אנחנו</a>
+</div>
+
+<div class="left-bar">
+     {% if not session['name'] %}
+        <div class="left-bar-item">
+            <a onclick="openForm()">התחברות</a>
+            <div class="form-popup" id="myForm">
+                <form method="post" action="{{ url_for('site.login') }}" class="form-container">
+                    <h1 class="login-title">כניסת משתמש</h1>
+                    <label for="email"><b>אימייל</b></label>
+                    <input type="text" placeholder="הכנס אימייל" name="email" id="email" required>
+                    <label for="psw"><b>סיסמא</b></label>
+                    <input type="password" placeholder="הקלד סיסמא" name="password" id="psw" required>
+                    <button type="submit" class="btn">התחבר</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">סגור</button>
+                </form>
+                <a class="be-friend" href={{ url_for('register.index') }}> עוד לא חברים שלנו? הצטרף עכשיו ! </a>
+            </div>
+        </div>
+        <a class="left-bar-item" href={{ url_for('register.index') }}>הרשמה</a>
+    {% else %}
+        <a class="left-bar-item" href={{ url_for('user.index') }}>איזור אישי</a>
+        <a class="left-bar-item" href={{ url_for('cart.index') }}>סל קניות</a>
+        <a class="left-bar-item" href={{ url_for('site.logout') }}>התנתק</a>
+    {% endif %}
+</div>
+
+<script src="{{ url_for('main_menu.static', filename='js/main-menu.js') }}"></script>

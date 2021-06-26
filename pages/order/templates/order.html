@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'ביצוע הזמנה' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('order.static', filename='css/order.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    {% if error %}
+        {{ error }}
+    {% else %}
+        <div class="content">
+            <div class="content-box scrolling-box">
+                <form method="POST" action={{ url_for('site.purchase_order') }}>
+                    <div>
+                        <p><b>טופס משלוח</b></p>
+                        <hr>
+                        <label for="phone"><b>מספר טלפון</b></label>
+                        <input type="tel" maxlength="10" id="phone" name="phone" pattern="[0-9]{10}">
+                        <br>
+                        <label for="adr"><b>כתובת</b></label>
+                        <input type="text" id="adr" name="street" placeholder="הכנס רחוב">
+                        <br>
+                        <label for="adr"><b>מספר בית</b></label>
+                        <input type="number" id="adr" name="houseNumber">
+                        <br>
+                        <label name="city" for="city">עיר מגורים </label>
+                        <select id="city" name="city">
+                            <option value="תל אביב">תל אביב</option>
+                            <option value="הוד השרון">הוד השרון</option>
+                            <option value="חצור הגלילית">חצור הגלילית</option>
+                            <option value="חיפה">חיפה</option>
+                            <option value="באר שבע">באר שבע</option>
+                            <option value="כפר תבור">כפר תבור</option>
+                            <option value="יבנה">יבנה</option>
+                            <option value="קיסריה">קיסריה</option>
+                        </select>
+                        <br/>
+                        <label for="adr"><b>בקשות מיוחדות</b></label>
+                        <textarea name="specialRequests"></textarea>
+                        <br/>
+                        <hr>
+                        <button type="submit" class="registerbtn">בצע הזמנה</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('order.static', filename='js/order.js') }}"></script>
+{% endblock %}

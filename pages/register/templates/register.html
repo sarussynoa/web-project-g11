@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'הרשמה' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('register.static', filename='css/register.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <section class="start">
+    <h1>טופס הרשמה למועדון החברים שלנו</h1>
+    <h2>שמחים שהחלטתם להצטרף למועדון החברים שלנו :)</h2>
+    <h4> החברים שלנו נהנים מעדכונים שוטפים כמעט בכל יום, הטבות ייחודיות בכל חודש והטבת יום הולדת בכל שנה!</h4>
+    <h3>להצטרפות אנא מלא/י את הפרטים האישיים שלך</h3>
+    </section>
+
+    <div class="content-box scrolling-box">
+        <form method="post" action="{{ url_for('site.create_user') }}" class="info">
+            <div class="detail">
+                <label for="name"><b>שם מלא</b></label>
+                <input class="input-info" type="text" placeholder="הכנס שם מלא" name="fullName" id="name" required>
+            </div>
+
+            <div class="detail">
+                <label for="email"><b>אי-מייל</b></label>
+                <input class="input-info" type="text" placeholder="הכנס אי-מייל" name="email" id="email" required>
+            </div>
+
+            <div class="detail">
+                <label for="phone"><b>טלפון</b></label>
+                <input class="input-info" maxlength="10" type="text" placeholder="הכנס מספר טלפון..." name="phone" id="phone" required>
+            </div>
+
+            <div class="detail">
+                <label for="psw"><b>סיסמה</b></label>
+                <input class="input-info" type="password" placeholder="הכנס סיסמה" name="password" id="psw" required>
+            </div>
+
+            <div class="detail">
+                <label for="psw-repeat"><b>אימות סיסמה</b></label>
+                <input class="input-info" type="password" placeholder="הכנס סיסמה" name="psw-repeat" id="psw-repeat" required>
+            </div>
+
+            <div class="detail">
+                <label for="birthday"><b>יומולדת</b></label>
+                <input class="input-info" type="date" name="birthday" id="birthday" required>
+            </div>
+            <br><br>
+
+            <div class="checks">
+               <div  class="check">
+                   <input type="checkbox" required>
+                       <label >אני מאשר/ת כי קראתי את תקנון המועדון ואני מסכים/ה לתנאיו.</label>
+               </div>
+
+               <div class="check">
+                   <input type="checkbox">
+                   <labal>כחבר מועדון הנך זכאי/ת להנות ממגוון רחב של הטבות ייחודיות הנשלחות מעת לעת בדואר אלקטרוני. אנא סמן/י אם הנך מעונין/ת בקבלת עדכונים והטבות בדואר אלקטרוני.</labal>
+               </div>
+            </div>
+
+            <div class="aprrove">
+                <p>
+                <button type="submit" class="registerbtn">הרשם</button>
+                <img class="jump" src={{ url_for('register.static', filename='media/jumpcookie.jpg') }} height="70" width="70"/><br>
+                </p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('register.static', filename='js/register.js') }}"></script>
+{% endblock %}

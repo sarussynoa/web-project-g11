@@ -1,0 +1,22 @@
+@import "variables.css";
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: var(--xsite-font-family);
+    direction: rtl;
+}
+
+.page-main {
+    padding: 30px 60px;
+}
+
+
+h2{
+    color: #a0522d;
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}

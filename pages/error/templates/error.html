@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'שגיאה' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('error.static', filename='css/error.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+ <div class="content">
+    <h2 class="errorNote"> שגיאה </h2>
+       <h3 class="center"> {{ message }}</h3>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('error.static', filename='js/error.js') }}"></script>
+{% endblock %}

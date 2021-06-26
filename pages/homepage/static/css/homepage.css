@@ -1,0 +1,18 @@
+
+.mainpic {
+    border-radius: 30%;
+    width: 200px;
+    height: 200px;
+}
+.about-me-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homepage-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

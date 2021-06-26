@@ -1,0 +1,120 @@
+
+.navigation-bar {
+    display: flex;
+    background-color: var(--primary-color);
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+}
+
+.navigation-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  background-color: white;
+  text-align: center;
+  max-height: fit-content;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 180px;
+  top: 40%;
+  border: 3px solid white;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  max-height: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: white;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #cd853f;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #a0522d;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.form-container.h1{
+  text-align: center;
+}
+
+.login-title {
+    color: black;
+}
+
+.logoPic {
+    width: 100%;
+    max-height : 40%;
+}
+
+
+.left-bar {
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid black;
+    width: 15%;
+    float: left;
+    color: white;
+    background: #cd853f;
+}
+
+.left-bar-item{
+    padding: 24px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-width: bold;
+}

@@ -1,0 +1,27 @@
+.categories {
+    display: flex;
+    justify-content: space-around;
+}
+
+.category {
+    margin: 5px;
+    width: 30%;
+}
+div.category img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    padding-top:20px;
+    padding-right:10px;
+    padding-left:15px;
+}
+div.desc {
+    text-align: center;
+    color: darkblue;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #000000;
+}
+

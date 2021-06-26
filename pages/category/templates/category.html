@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = category %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('category.static', filename='css/category.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+ <div class="content">
+    <h2> {{ category }} </h2>
+        <div class="line12">
+            <div class="line1">
+                 {% for product in data %}
+                   <div class="category">
+                    <a  class="desc" href={{ url_for('product.index', id=product.id) }}>{{product.name}} </a>
+                    <img src={{ product.image }} width="150" height="150">
+                   </div>
+                 {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('category.static', filename='js/category.js') }}"></script>
+{% endblock %}

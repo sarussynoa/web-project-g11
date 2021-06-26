@@ -1,0 +1,17 @@
+:root {
+    /* Colors */
+    --primary-color: #4b2409;
+    --primary-contrast-color: white;
+    --secondary-color: #a0522d;
+    --secondary-contrast-white: white;
+
+    /* Fonts */
+    --xsite-font-family: Calibri, sans-serif;
+    --xsite-font-size: 16px;
+
+    /* Links */
+    --active-menu-item-color: var(--primary-color);
+    --link-color: var(--secondary-color);
+    --active-link-color: var(--primary-color);
+    --visited-link-color: var(--secondary-color);
+}

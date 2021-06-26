@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'עלינו' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="about-box">
+    <div class="myImg">
+        <img class="mePic" src={{ url_for('about.static', filename='media/me.jpeg') }} alt="me">
+    </div>
+    <h1> מי אנחנו:</h1>
+    <p>
+    קוקיקלאב הינו עסק פרטי לעוגיות בוטיק אשר הוקם ע"י בר כהן, סטודנטית באוניברסיטת בן גוריון<br>
+    בר אופה ומכינה את כלל העוגיות במטבחה הפרטי בביתה הממוקם בבאר שבע, היא דוגלת בנקיון והתאמה אישית לכל בקשה, ומשקיעה בכל עוגיה ועוגיה!
+    </p>
+    <h1> איך הכל התחיל: </h1>
+    <p>
+    מגיל צעיר בר אהבה לאפות ולאחר שהכינה עוגיות לכל חבריה בסגר, עלה במוחה הרעיון להפוך את אהבתה לעסק משגשג! <br>
+    כיום, היא מוכרת מגוון מארזי עוגיות אשר ניתן לקבל באיסוף עצמי או ע"י שליח. <br>
+    ניתן לבחור עוגיות בתפזורת, במארזים מוגדרים מראש, או לבקש באופן ספציפי מארזים המותאמים לפי אלרגיה או בקשות מיוחדות.
+    </p>
+    <br>
+    </div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
+{% endblock %}

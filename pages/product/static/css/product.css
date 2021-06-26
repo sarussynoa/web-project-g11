@@ -1,0 +1,51 @@
+.product-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.cookie {
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    margin: auto;
+}
+
+.description{
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right:20px;
+}
+
+.button-add-quantity button {
+    margin-right: 60px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: white;
+    border-radius: 10%;
+    width: 150px;
+    height: 40px;
+    font-size: 25px;
+    margin-top: 50px;
+
+}
+.add-cart:hover{
+    cursor: pointer;
+    background-color: darkblue;
+    color:white;
+    padding-bottom: 30px;
+
+}
+
+.quantity{
+    margin-top: 100px;
+}
+
+.msg-box {
+    padding: 20px;
+    font-size: 24px;
+    color: green;
+    border: 2px black ridge;
+    margin: 10px 10px;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'עמוד הבית' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="about-me-box">
+        <img class="mainpic" src={{ url_for('homepage.static', filename='media/mainpic.jpeg') }} alt="bar"/>
+        <p class="aboutMe">
+        <h1>מי אני</h1>
+        היי, אני בר כהן! <br/>
+        סטודנטית באוניברסיטת בן גוריון בבאר שבע<br/>
+        מגיל קטן התחלתי להתאהב במטבח <br/>
+        ותמיד פינקתי את חברי...<br/>
+        <a href={{ url_for('about.index')}}>קרא עוד</a>
+        </p>
+        <div class="homepage-links">
+
+            <div class="content-box">
+                <a href={{ url_for('category.index', category="glutenFree") }} target="_blank">
+                    <img src={{ url_for('homepage.static', filename='media/main1.jpg') }} width="620" height="215"/>
+                </a>
+            </div>
+
+            <div class="content-box">
+                <a href={{ url_for('category.index', category="box") }} target="_blank">
+                    <img src={{ url_for('homepage.static', filename='media/main2.png') }} width="620" height="215"/>
+                </a>
+            </div>
+
+            <div class="content-box">
+                <a href={{ url_for('category.index', category="single") }} target="_blank">
+                    <img src={{ url_for('homepage.static', filename='media/main3.png') }} width="620" height="215"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,51 @@
+footer{
+    background-color: #FBEEE6;
+    width: 100%;
+    padding: 40px;
+}
+
+.footer-part img{
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.links{
+    padding-right: 100px;
+    padding-left: 100px;
+    height: 150px;
+    width: 100%;
+    align-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-part{
+    width: 33%;
+    padding-top: 1%;
+    float: right;
+    text-align: right;
+}
+
+.footer-part a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.footer-part a:hover{
+    opacity: 0.5;
+}
+.contact a{
+   width: max-content;
+}
+
+.strong{
+    font-weight: bolder;
+}
+
+.links img{
+    position: relative;
+    top: 5px;
+}

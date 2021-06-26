@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'סל קניות' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+{% endblock %}
+{% block page_body_main_content %}
+    <div class="content">
+        <div class="content-box scrolling-box">
+                <h1>סל קניות</h1>
+                {% if error %}
+                  {{ error }}
+                {% else %}
+                    <div class="my-cart">
+                            <table class="my-products">
+                                <tr>
+                                    <th>תמונה</th>
+                                    <th>שם המוצר</th>
+                                    <th>כמות</th>
+                                    <th>מחיר ליחידה</th>
+                                    <th></th>
+                                </tr>
+                                {% for product in items %}
+                                    <tr>
+                                        <td>
+                                            <img class="prod-pic" src={{ product.image }} height="90" width="80"/>
+                                        </td>
+                                        <td><a>{{ product.name }}</a></td>
+                                        <td>
+                                           <span> {{  product.amount }}</span>
+                                        </td>
+                                        <td>
+                                            <span> ₪{{ product.price }}</span>
+                                        </td>
+                                        <td>
+                                            <form method="POST" action="{{ url_for('site.add_edit_product_on_cart', item_id=product.productId) }}" >
+                                                <input type="hidden" value="0" name="amount" id="amount"/>
+                                               <button class="del-btn" type="submit" >
+                                                   מחק מוצר
+                                                    <img class="del" src={{ url_for('cart.static', filename='media/Cart.jpg') }}  alt="delete"/>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                    </div>
+
+            <form method="get" action="{{ url_for('order.index') }}">
+                    <div class="order-container">
+                    <h2> לתשלום </h2>
+                        <h4> פרטי הזמנה</h4>
+                        {% set price = namespace(total=0) %}
+                        {% for product in items %}
+                                {% set price.total = price.total + product.price * product.amount %}
+                                <p><a>{{ product.amount }} x {{ product.name }}</a>
+                                    <span class="price">
+                                        ₪{{ product.price }} * {{ product.amount }} = ₪{{ product.price * product.amount }}
+                                    </span></p>
+                        {% endfor %}
+                        <hr>
+                        <p>סך הכל לתשלום <span class="price-total"><b>₪{{ price.total }}</b></span></p>
+                    </div>
+                    <button type="submit" class="registerbtn">המשך לביצוע הזמנה </button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('cart.static', filename='js/cart.js') }}"></script>
+{% endblock %}

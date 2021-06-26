@@ -1,0 +1,144 @@
+
+.my-cart .title {
+    height: 40px;
+}
+
+.my-cart{
+    align-content: center;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.my-cart .cart{
+    align-content: center;
+}
+
+.my-cart h1{
+    color: #cd853f;
+    font-weight: bold;
+    padding: 5px 5px 20px 5px ;
+    text-align: center;
+    font-size: 60px;
+}
+
+.title{
+    margin-bottom: 30px;
+}
+.prod-pic{
+    width: 200Px;
+}
+
+.my-cart h3{
+    color: #a0522d;
+    width: 90%;
+    margin: auto;
+    color: black;
+    margin-top: 15px;
+    font-size:30px ;
+}
+
+
+.my-products {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.my-products td, .my-products th {
+    border: 1px solid white;
+    padding: 8px;
+    width: 20%;
+    text-align: center;
+
+}
+.my-products td .options{
+    text-align: right;
+    position: relative;
+    right: 30%;
+}
+
+.my-products td a{
+    color: black;
+    text-decoration: underline ;
+}
+
+.my-products td .del{
+    width: 20px;
+    height: 20px;
+}
+
+.del-btn{
+    position: 20px;
+    border: 0px;
+}
+
+.my-products td a:hover{
+    font-weight: bolder ;
+    color: #a0522d;
+    text-align: inherit;
+}
+
+.my-products tr{
+/background-color: greenyellow;/
+}
+
+.my-products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #a0522d;
+    color: white;
+    text-align: center;
+}
+
+.order-container {
+    width: 50%;
+    background-color: #c19a6b;
+    padding: 5%;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: black;
+    margin: auto;
+/margin-left: 10%;/
+text-align: center;
+}
+.order-container a{
+    color: black;
+}
+
+span.price {
+    float: left;
+    color: grey;
+}
+
+span.price.total{
+    color: black;
+}
+
+
+
+p>a:hover{
+    font-weight: bolder;
+    color: #a0522d;
+}
+
+.container p{
+    margin-bottom: 5px;
+}
+
+.container h4{
+    font-size: 30px ;
+}
+
+.registerbtn{
+    margin:auto;
+    display: block;
+    background: var(--secondary-color);
+    color: white;
+    padding:20px;
+    font-size: 24px;
+    border: none;
+    width: 40%;
+    opacity: 0.9;
+}

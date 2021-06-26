@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'איזור אישי' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('user.static', filename='css/user.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="content-box scrolling-box">
+        <h1>ברוך הבא, {{ session['name'] }}!</h1>
+        <h3> הזמנות קודמות: </h3>
+        <table class="my-products">
+            <tr>
+                <th>תאריך</th>
+                <th>כתובת</th>
+                <th>בקשות</th>
+                <th>מחיר כולל</th>
+            </tr>
+            {% for order in orders %}
+                <tr>
+                    <td>
+                        {{ order.createdAt }}
+                    </td>
+                    <td>{{ order.street }} {{ order.houseNumber }}, {{ order.city }}</td>
+                    <td>
+                        <span> {{ order.specialRequests }}</span>
+                    </td>
+                    <td>
+                        <span> ₪{{ order.totalCost }}</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br>
+    </div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('user.static', filename='js/user.js') }}"></script>
+{% endblock %}

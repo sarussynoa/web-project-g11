@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="{{ url_for('footer.static', filename='css/footer.css') }}"/>
+{%
+    set footer_items = [
+        ['עוגיות',  url_for('category.index', category="single")],
+        ['עוגיות ללא גלוטן', url_for('category.index', category="glutenFree")],
+        ['מארזי עוגיות',  url_for('category.index', category="box")],
+    ]
+%}
+<div class="links">
+    <div class="footer-part">
+        {% for item in footer_items %}
+                <a
+                    href="{{ item[1] }}"
+                    {% if item[1] == request.path %}
+                        class="active"
+                    {% endif %}
+                >{{ item[0] }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="footer-part">
+        <a href={{ url_for('about.index') }} >מי אני?</a>
+    </div>
+
+    <div class="footer-part">
+        <strong>שמרו על קשר!</strong>
+        <div class="contact">
+            <a href="tel:050-1234567"><img src={{ url_for('footer.static', filename='media/phone.png') }}></a>
+            <a href="tel:050-1234567">050-1234567</a>
+        </div>
+        <div class="contact">
+            <a href="https://www.instagram.com/cookie.love/"><img src={{ url_for('footer.static', filename='media/instagram.png') }} alt="instagram"/></a>
+            <a href="https://www.instagram.com/cookie.love/">cookie.love</a>
+        </div>
+        <div class="contact">
+            <a href="mailto:cookie.love@gmail.com"><img src={{ url_for('footer.static', filename='media/mail.png') }} alt="mail"/></a>
+            <a href="mailto:cookie.love@gmail.com">cookie.love@gmail.com</a>
+        </div>
+    </div>
+</div>

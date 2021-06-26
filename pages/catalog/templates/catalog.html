@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'תפריט' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="content-box">
+        <div class="line1">
+            <h2 id="choose"><script> Choose() </script></h2>
+            <br><br><br>
+        </div>
+        <div class="categories">
+            <div class="category">
+                <a target="_blank" href={{ url_for('category.index', category="single") }} >
+                <img src={{ url_for('catalog.static', filename='media/single.jpeg') }} >
+                </a>
+                <div class="desc">עוגיות</div>
+            </div>
+
+            <div class="category">
+                <a target="_blank" href={{ url_for('category.index', category="box") }} >
+                <img src={{ url_for('catalog.static', filename='media/box.jpeg') }}>
+                </a>
+                <div class="desc">מארזים חגיגיים</div>
+            </div>
+
+            <div class="category">
+                <a target="_blank"  href={{ url_for('category.index', category="glutenFree") }}>
+                <img src={{ url_for('catalog.static', filename='media/glutenFree.jpeg') }}>
+                </a>
+                <div class="desc">עוגיות ללא גלוטן</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('catalog.static', filename='js/catalog.js') }}"></script>
+{% endblock %}
